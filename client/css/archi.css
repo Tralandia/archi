@@ -1,0 +1,162 @@
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@font-face {
+	font-family: 'Haptik';
+	font-weight: normal;
+	src: url(../fonts/GT-Haptik-Regular.ttf);
+	src: url(../fonts/GT-Haptik-Regular.svg);
+	src: url(../fonts/GT-Haptik-Regular.eot);
+	src: url(../fonts/GT-Haptik-Regular.woff);
+}
+@font-face {
+	font-family: 'Haptik';
+	font-weight: bold;
+	src: url(../fonts/GT-Haptik-Medium.ttf);
+	src: url(../fonts/GT-Haptik-Medium.svg);
+	src: url(../fonts/GT-Haptik-Medium.eot);
+	src: url(../fonts/GT-Haptik-Medium.woff);
+}
+
+@font-face {
+	font-family: 'Haptik2';
+	font-weight: normal;
+	src: url(../fonts/GT-Haptik-Regular-2.ttf);
+	src: url(../fonts/GT-Haptik-Regular-2.svg);
+	src: url(../fonts/GT-Haptik-Regular-2.eot);
+	src: url(../fonts/GT-Haptik-Regular-2.woff);
+}
+@font-face {
+	font-family: 'Haptik2';
+	font-weight: bold;
+	src: url(../fonts/GT-Haptik-Medium-2.ttf);
+	src: url(../fonts/GT-Haptik-Medium-2.svg);
+	src: url(../fonts/GT-Haptik-Medium-2.eot);
+	src: url(../fonts/GT-Haptik-Medium-2.woff);
+}
+
+body {
+	padding-top: 40px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+	font: 17px/24px "Haptik";
+	font-family: "Haptik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #e7e7e7;
+}
+
+p.lead {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.btn-primary {
+	background: #eee;
+	border-color: #aaa;
+	color: #333;
+}
+.btn-primary:hover {
+	background: #333;
+	border-color: #000;
+}
+
+.navbar-default {
+	background: #fff;
+	padding: 10px 15px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.navbar-default .navbar-brand {
+	font-size: 30px;
+	color: #ddd;
+}
+
+.content-container {
+	padding: 30px;
+}
+
+.well-filter {
+	border-radius: 0 0 5px 5px;
+	border-top: none;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.list .list-project	{
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+.list .list-project:last-child {
+	border-bottom: none;
+}
+.list .list-project h1 {
+	margin-top: 15px;
+}
+.list .list-project .btn-primary {
+	position: absolute;
+	bottom: 30px;
+	width: 23.5%;
+}
+.list .list-project [class*="col-"] {
+	position: inherit;
+}
+.list .list-project p.lead {
+	color: #666;
+}
+
+.project-detail {}
+.project-detail .well {
+	border-radius: 0 0 5px 5px;
+	border-top: none;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	padding-bottom: 0;
+}
+.project-detail .well h1 {
+	margin-top: 0;
+}
+.project-detail .well p.lead {
+	color: #666;
+}
+.project-detail a.btn-primary {
+	margin-top: 15px;
+}
+
+.project-attributes span {
+	color: #999;
+}
+
+.project-gallery {
+	position: relative;
+}
+.project-gallery a.prev {
+	position: absolute;
+	right: 75px;
+	top: 15px;
+	color: #fff;
+	background: rgba(0,0,0,0.3);
+	font-size: 34px;
+	border-radius: 100%;
+	padding: 6px 8px 10px;
+}
+.project-gallery a.prev:hover {
+	color: #666;
+	background: rgba(255,255,255,0.8);
+}
+.project-gallery a.next {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	color: #fff;
+	background: rgba(0,0,0,0.3);
+	font-size: 34px;
+	border-radius: 100%;
+	padding: 6px 8px 10px;
+}
+.project-gallery a.next:hover {
+	color: #666;
+	background: rgba(255,255,255,0.8);
+}
+
+footer {
+	margin: 50px 0;
+}
