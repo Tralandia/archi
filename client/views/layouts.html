@@ -1,0 +1,17 @@
+<body></body>
+
+<template name="DefaultLayout">
+	{{> navbar}}
+
+	<div class="content-container">
+
+		{{#if isDetail}}
+			{{> detail}}
+		{{else}}
+			{{> filter}}
+			{{> list}}
+		{{/if}}
+
+		{{> footer}}
+	</div>
+</template>

@@ -150,7 +150,7 @@ p.lead {
 	color: #fff;
 	background: rgba(0,0,0,0.3);
 	font-size: 34px;
-	border-radius: 100%;
+	border-radius: 5px;
 	padding: 6px 8px 10px;
 }
 .project-gallery a.prev:hover {
@@ -164,7 +164,7 @@ p.lead {
 	color: #fff;
 	background: rgba(0,0,0,0.3);
 	font-size: 34px;
-	border-radius: 100%;
+	border-radius: 5px;
 	padding: 6px 8px 10px;
 }
 .project-gallery a.next:hover {
