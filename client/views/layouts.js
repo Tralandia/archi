@@ -1,5 +1,5 @@
 Template.DefaultLayout.helpers({
-	isDetail: function() {
-		return false;
+	isDetail: function(page) {
+		return page == 'detail';
 	}
 });
