@@ -60,6 +60,19 @@ p.lead {
 	border-color: #000;
 }
 
+.btn-upload {
+	background: #eee;
+	position: relative;
+}
+.btn-upload input {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+}
+
 .navbar-default {
 	background: #fff;
 	padding: 10px 15px;

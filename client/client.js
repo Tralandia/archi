@@ -1,3 +1,1 @@
-Meteor.startup(function() {
-	
-});
+Meteor.subscribe("Plans");
