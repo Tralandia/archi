@@ -1,5 +1,8 @@
 <template name="footer">
 	<footer>
-		<p class="text-center">Architekti.sk 2016 &copy;</p>
+		<p class="text-center">
+			Architekti.sk 2016 &copy;
+			{{#unless currentUser}} | <a href="#admin-login-modal" data-toggle="modal">Admin</a>{{/unless}}
+		</p>
 	</footer>
 </template>

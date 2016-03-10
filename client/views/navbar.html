@@ -9,21 +9,31 @@
 			</button>
 			<a class="navbar-brand" href="/">Architekti.sk</a>
 		</div>
+		{{#if currentUser}}
+		<ul class="nav navbar-nav pull-right">
+			<li>
+				<a href="#add-plan-modal" data-toggle="modal">Pridať projekt</a>
+			</li>
+			<li>
+				<a href="#" class="logout">Odhlásiť</a>
+			</li>
+		</ul>
+		{{/if}}
 		<div class="collapse navbar-collapse" id="navbar-toggle-top">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Projekty</a>
-                </li>
-                <li>
-                    <a href="#">O nás</a>
-                </li>
-                <li>
-                    <a href="#">Otázky</a>
-                </li>
-                <li>
-                    <a href="#">Kontakt</a>
-                </li>
-            </ul>
-        </div>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="#">Projekty</a>
+				</li>
+				<li>
+					<a href="#">O nás</a>
+				</li>
+				<li>
+					<a href="#">Otázky</a>
+				</li>
+				<li>
+					<a href="#">Kontakt</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 </template>

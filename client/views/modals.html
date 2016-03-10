@@ -1,0 +1,234 @@
+<template name="modals">
+	{{#if currentUser}}
+		{{> addPlanModal}}}
+	{{else}}
+		{{> adminLoginModal}}
+	{{/if}}
+</template>
+
+<template name="adminLoginModal">
+	<div class="modal" id="admin-login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<form>
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="form-group">
+							<input class="form-control" id="username" placeholder="Užívateľ">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="password" placeholder="Heslo">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Prihlásiť</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
+
+<template name="addPlanModal">
+	<div class="modal" id="add-plan-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<form>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Pridať projekt</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-name" placeholder="Názov">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Typ domu</label>
+									<select class="form-control" id="plan-type">
+										<option>- vyber -</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Garáž</label>
+									<select class="form-control" id="plan-garage">
+										<option>- vyber -</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Strecha</label>
+									<select class="form-control" id="plan-roof">
+										<option>- vyber -</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<label>Rozmery</label>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-landWidth" placeholder="Šírka pozemku">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-landLength" placeholder="Dĺžka pozemku">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-rooftopHeight" placeholder="Max. výška strechy">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-stories" placeholder="Počet poschodí">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-livingRoomCount" placeholder="Obytné miestnosti">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-bathroomsCount" placeholder="Kúpeľne">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-capacityMin" placeholder="Kapacita Osob Min">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-capacityMax" placeholder="Kapacita Osob Max">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-entranceOrientation" placeholder="Orientácia vstupu do domu">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<label>Plocha</label>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-livingArea" placeholder="Obytná plocha">
+										<div class="input-group-addon">m<sup>2</sup></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-usedArea" placeholder="Zastavaná plocha">
+										<div class="input-group-addon">m<sup>2</sup></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-usableArea" placeholder="Úžitková plocha">
+										<div class="input-group-addon">m<sup>2</sup></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Cena projektu domu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-planPrice" placeholder="0.0">
+										<div class="input-group-addon">&euro;</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Cena štúdie domu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-studyPrice" placeholder="0.0">
+										<div class="input-group-addon">&euro;</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Cena realizácie domu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-housePrice" placeholder="0.0">
+										<div class="input-group-addon">&euro;</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 
+						<div class="form-group">
+							<input type="text" class="form-control" id="plan-name" placeholder="Názov""photos.interior"	"Fotografie interiér">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="plan-name" placeholder="Názov""photos.exterior"	"Exteriér">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="plan-name" placeholder="Názov""photos.views"	"Pohľady">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="plan-name" placeholder="Názov""photos.builds"	"Realizácie">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="plan-name" placeholder="Názov"similarPlans	"Podobné domy">
+						</div>
+						-->
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Možný na dvojdom</label>
+									<select class="form-control" id="plan-doubleHouseOption">
+										<option value="0">Nie</option>
+										<option value="1">Áno</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Vhodný na svahovitý pozemok</label>
+									<select class="form-control" id="plan-suitableForHillside">
+										<option value="0">Nie</option>
+										<option value="1">Áno</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>Realizované</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-built">
+										<div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label>Dokumentacia (vsetky suvisiace subory, aj cele zip)</label>
+									<input type="file" class="form-control" id="plan-documentation">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Pridať projekt</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
