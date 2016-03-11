@@ -5,21 +5,33 @@
 				<div class="col-md-3">
 					<select class="form-control">
 						<option>- typ domu -</option>
+						{{#each getParameters "project-type"}}
+						<option value="{{_id}}">{{name}}</option>
+						{{/each}}
 					</select>
 				</div>
 				<div class="col-md-3">
 					<select class="form-control">
 						<option>- garáž -</option>
+						{{#each getParameters "garage-type"}}
+						<option value="{{_id}}">{{name}}</option>
+						{{/each}}
 					</select>
 				</div>
 				<div class="col-md-3">
 					<select class="form-control">
 						<option>- strecha -</option>
+						{{#each getParameters "roof-type"}}
+						<option value="{{_id}}">{{name}}</option>
+						{{/each}}
 					</select>
 				</div>
 				<div class="col-md-3">
 					<select class="form-control">
 						<option>- veľkosť -</option>
+						{{#each getParameters "project-size"}}
+						<option value="{{_id}}">{{name}}</option>
+						{{/each}}
 					</select>
 				</div>
 			</div>

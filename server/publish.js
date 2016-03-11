@@ -1,3 +1,3 @@
 Meteor.publish("Plans", function () {
-	return C.Plan.find();
+	return [C.Parameter.find(), C.Plan.find()];
 });

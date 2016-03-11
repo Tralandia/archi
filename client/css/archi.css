@@ -65,6 +65,7 @@ p.lead {
 	position: relative;
 }
 .btn-upload input {
+	width: 144px;
 	position: absolute;
 	left: 0;
 	right: 0;

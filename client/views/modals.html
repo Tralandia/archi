@@ -62,30 +62,44 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-name" placeholder="Názov" value="{{name}}">
+									<input type="text" class="form-control" id="plan-name-edit" placeholder="Názov" value="{{name}}">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea class="form-control" id="plan-description" placeholder="Popis">{{description}}</textarea>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label>Typ domu</label>
-									<select class="form-control" id="plan-type" data-value="{{type}}">
-										<option>- vyber -</option>
+									<select class="form-control" id="plan-type">
+										<option value="">- vyber -</option>
+										{{#each getParameters "project-type"}}
+										<option value="{{_id}}" {{isSelected 'type'}}>{{name}}</option>
+										{{/each}}
 									</select>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label>Garáž</label>
-									<select class="form-control" id="plan-garage" data-value="{{type}}">
-										<option>- vyber -</option>
+									<select class="form-control" id="plan-garage">
+										<option value="">- vyber -</option>
+										{{#each getParameters "garage-type"}}
+										<option value="{{_id}}" {{isSelected 'garage'}}>{{name}}</option>
+										{{/each}}
 									</select>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label>Strecha</label>
-									<select class="form-control" id="plan-roof" data-value="{{type}}">
-										<option>- vyber -</option>
+									<select class="form-control" id="plan-roof">
+										<option value="">- vyber -</option>
+										{{#each getParameters "roof-type"}}
+										<option value="{{_id}}" {{isSelected 'roof'}}>{{name}}</option>
+										{{/each}}
 									</select>
 								</div>
 							</div>
@@ -94,17 +108,26 @@
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-landWidth" placeholder="Šírka pozemku" value="{{landWidth}}">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-landWidth" placeholder="Šírka pozemku" value="{{landWidth}}">
+										<div class="input-group-addon">m</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-landLength" placeholder="Dĺžka pozemku" value="{{landLength}}">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-landLength" placeholder="Dĺžka pozemku" value="{{landLength}}">
+										<div class="input-group-addon">m</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-rooftopHeight" placeholder="Max. výška strechy" value="{{rooftopHeight}}">
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-rooftopHeight" placeholder="Max. výška strechy" value="{{rooftopHeight}}">
+										<div class="input-group-addon">m</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -124,12 +147,12 @@
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-capacityMin" placeholder="Kapacita Osob Min" value="{{capacityMin}}">
+									<input type="text" class="form-control" id="plan-capacityMin" placeholder="Kapacita Osob Min" value="{{capacity.min}}">
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-capacityMax" placeholder="Kapacita Osob Max" value="{{capacityMax}}">
+									<input type="text" class="form-control" id="plan-capacityMax" placeholder="Kapacita Osob Max" value="{{capacity.max}}">
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -240,7 +263,7 @@
 									<label>Možný na dvojdom</label>
 									<select class="form-control" id="plan-doubleHouseOption">
 										<option value="0">Nie</option>
-										<option value="1">Áno</option>
+										<option value="1" {{isSelected 'doubleHouseOption'}}>Áno</option>
 									</select>
 								</div>
 							</div>
@@ -249,7 +272,7 @@
 									<label>Vhodný na svahovitý pozemok</label>
 									<select class="form-control" id="plan-suitableForHillside">
 										<option value="0">Nie</option>
-										<option value="1">Áno</option>
+										<option value="1" {{isSelected 'suitableForHillside'}}>Áno</option>
 									</select>
 								</div>
 							</div>

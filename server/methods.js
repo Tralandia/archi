@@ -4,42 +4,45 @@ Meteor.methods({
 		if (!userId || !name) return;
 
 		return C.Plan.insert({
-			name: name,
-			type: "",
-			garage: "",
-			roof: "",
-			landWidth: 0,
-			landLength: 0,
-			rooftopHeight: 0,
-			stories: 0,
-			livingRoomCount: 0,
-			capacity: {
-				min: 0,
-				max: 0
-			},
-			bathroomsCount: 0,
-			usableArea: 0,
-			livingArea: 0,
-			usedArea: 0,
-			entranceOrientation: "",
-			planPrice: 0,
-			studyPrice: 0,
-			housePrice: 0,
-			photos: {
-				interior: {},
-				exterior: {},
-				views: {},
-				builds: {}
-			},
-			similarPlans: {},
-			doubleHouseOption: false,
-			suitableForHillside: false,
-			built: new Date(),
-			documentation: {}
+			name: name
 		});
 	},
-	updatePlan: function(_id, data) {
-
+	editPlan: function(_id, data) {
+		return C.Plan.update(_id, {$set: {
+			name: data.name,
+			description: data.description,
+			type: data.type,
+			garage: data.garage,
+			roof: data.roof,
+			landWidth: data.landWidth,
+			landLength: data.landLength,
+			rooftopHeight: data.rooftopHeight,
+			stories: data.stories,
+			livingRoomCount: data.livingRoomCount,
+			capacity: {
+				min: data.capacity.min,
+				max: data.capacity.max
+			},
+			bathroomsCount: data.bathroomsCount,
+			usableArea: data.usableArea,
+			livingArea: data.livingArea,
+			usedArea: data.usedArea,
+			entranceOrientation: data.entranceOrientation,
+			planPrice: data.planPrice,
+			studyPrice: data.studyPrice,
+			housePrice: data.housePrice,
+			// photos: {
+			// 	interior: {},
+			// 	exterior: {},
+			// 	views: {},
+			// 	builds: {}
+			// },
+			similarPlans: data.similarPlans,
+			doubleHouseOption: data.doubleHouseOption,
+			suitableForHillside: data.suitableForHillside,
+			built: data.built
+			// documentation: 
+		}});
 	},
 	removePlan: function(_id) {
 
