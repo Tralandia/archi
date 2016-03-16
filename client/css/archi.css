@@ -88,6 +88,21 @@ p.lead {
 	padding: 30px;
 }
 
+.photos {}
+.photos .col-sm-1 {
+	padding-right: 0;
+}
+.photos .col-sm-1 img {
+	width: 100%;
+	max-height: 40px;
+}
+.photos a.remove {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #f00;
+}
+
 .well-filter {
 	border-radius: 0 0 5px 5px;
 	border-top: none;
@@ -156,6 +171,14 @@ p.lead {
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.project-gallery a.edit {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
 }
 .project-gallery a.prev {
 	position: absolute;

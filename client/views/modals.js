@@ -24,8 +24,9 @@ Template.createPlanModal.events({
 		e.preventDefault();
 
 		var name = t.find("#plan-name").value;
-		if (name) {
-			Meteor.call("createPlan", name, function(error, response) {
+		var description = t.find("#plan-description").value;
+		if (name && description) {
+			Meteor.call("createPlan", {name: name, description: description}, function(error, response) {
 				if (error) {
 					console.log(error);
 				} else {
@@ -41,7 +42,9 @@ Template.editPlanModal.helpers({
 	plan: function() {
 		var planId = Session.get("editPlanId");
 		if (planId) {
-			$("#edit-plan-modal").modal("show");
+			$("#edit-plan-modal").modal("show").on("hide.bs.modal", function() {
+				Session.set("editPlanId", false);
+			});
 			Meteor.setTimeout(function() {
 				$("#plan-built").datepicker();
 			});
@@ -70,6 +73,13 @@ Template.editPlanModal.helpers({
 		if (type == 'suitableForHillside') {
 			return this.suitableForHillside == true ? "selected" : "";
 		}
+	},
+	getPhotos: function(type) {
+		if (this.photos && this.photos[type] && this.photos[type].length > 0) {
+			return Images.find({_id: {$in: this.photos[type]}});
+		} else {
+			return false;
+		}
 	}
 });
 
@@ -78,9 +88,12 @@ Template.editPlanModal.events({
 		e.preventDefault();
 
 		var planId = Session.get("editPlanId");
+		var builtDate = moment($("#plan-built").val(), "MM/DD/YYYY");
+		
 		var data = {
 			name: $("#plan-name-edit").val(),
-			description: $("#plan-description").val(),
+			slug: $("#plan-slug-edit").val(),
+			description: $("#plan-description-edit").val(),
 			type: $("#plan-type").val(),
 			garage: $("#plan-garage").val(),
 			roof: $("#plan-roof").val(),
@@ -101,14 +114,9 @@ Template.editPlanModal.events({
 			planPrice: $("#plan-planPrice").val(),
 			studyPrice: $("#plan-studyPrice").val(),
 			housePrice: $("#plan-housePrice").val(),
-			// photosInterior: $("#plan-photosInterior").val(),
-			// photosExterior: $("#plan-photosExterior").val(),
-			// photosViews: $("#plan-photosViews").val(),
-			// photosBuilds: $("#plan-photosBuilds").val(),
 			doubleHouseOption: ($("#plan-doubleHouseOption").val() == "1" ? true : false),
 			suitableForHillside: ($("#plan-suitableForHillside").val() == "1" ? true : false),
-			built: $("#plan-built").val()
-			// documentation: $("#plan-documentation").val()
+			built: builtDate.toDate()
 		}
 
 		Meteor.call('editPlan', planId, data, function(error, result) {
@@ -116,6 +124,7 @@ Template.editPlanModal.events({
 				console.log(error);
 			} else {
 				console.log(result);
+				$("#edit-plan-modal").modal("hide");
 			}
 		});
 	},
@@ -138,7 +147,7 @@ Template.editPlanModal.events({
 		var files = e.target.files;
 		var id = e.target.getAttribute('id')
 		var planId = Session.get("editPlanId");
-console.log(id);
+
 		for (var i = 0, ln = files.length; i < ln; i++) {
 			Images.insert(files[i], function (err, fileObj) {
 				var type = "photos.interior";
@@ -155,5 +164,16 @@ console.log(id);
 				Plan.update(planId, update);
 			});
 		}
+	},
+	'click .photos a.remove': function(e, t) {
+		e.preventDefault();
+
+		var planId = Session.get("editPlanId");
+		var key = "photos." + $(e.currentTarget).data('key');
+		var update = { $pull: {} };
+			update.$pull[key] = this._id;
+
+		Images.remove(this._id);
+		Plan.update(planId, update);
 	}
 });

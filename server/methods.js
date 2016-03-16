@@ -1,15 +1,19 @@
 Meteor.methods({
-	createPlan: function(name) {
-		var userId = Meteor.userId();
-		if (!userId || !name) return;
+	createPlan: function(data) {
+		if (!Meteor.userId()) return;
 
 		return C.Plan.insert({
-			name: name
+			name: data.name,
+			slug: slugify(data.name),
+			description: data.description
 		});
 	},
 	editPlan: function(_id, data) {
+		if (!Meteor.userId()) return;
+		
 		return C.Plan.update(_id, {$set: {
 			name: data.name,
+			slug: slugify(data.slug),
 			description: data.description,
 			type: data.type,
 			garage: data.garage,
@@ -31,17 +35,10 @@ Meteor.methods({
 			planPrice: data.planPrice,
 			studyPrice: data.studyPrice,
 			housePrice: data.housePrice,
-			// photos: {
-			// 	interior: {},
-			// 	exterior: {},
-			// 	views: {},
-			// 	builds: {}
-			// },
 			similarPlans: data.similarPlans,
 			doubleHouseOption: data.doubleHouseOption,
 			suitableForHillside: data.suitableForHillside,
 			built: data.built
-			// documentation: 
 		}});
 	},
 	removePlan: function(_id) {

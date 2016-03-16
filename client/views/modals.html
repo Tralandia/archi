@@ -1,7 +1,7 @@
 <template name="modals">
 	{{#if currentUser}}
-		{{> createPlanModal}}}
-		{{> editPlanModal}}}
+		{{> createPlanModal}}
+		{{> editPlanModal}}
 	{{else}}
 		{{> adminLoginModal}}
 	{{/if}}
@@ -41,6 +41,9 @@
 						<div class="form-group">
 							<input type="text" class="form-control" id="plan-name" placeholder="Názov">
 						</div>
+						<div class="form-group">
+							<textarea class="form-control" id="plan-description" placeholder="Popis"></textarea>
+						</div>
 						<button type="submit" class="btn btn-primary">Vytvoriť</button>
 					</div>
 				</div>
@@ -60,14 +63,19 @@
 					</div>
 					<div class="modal-body">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-6">
 								<div class="form-group">
 									<input type="text" class="form-control" id="plan-name-edit" placeholder="Názov" value="{{name}}">
 								</div>
 							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="plan-slug-edit" placeholder="Slug" value="{{slug}}">
+								</div>
+							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea class="form-control" id="plan-description" placeholder="Popis">{{description}}</textarea>
+									<textarea class="form-control" id="plan-description-edit" placeholder="Popis">{{description}}</textarea>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -222,6 +230,16 @@
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosInterior">
 									</a>
+									<div class="photos">
+										<div class="row">
+											{{#each getPhotos 'interior'}}
+											<div class="col-sm-1">
+												<img src="{{this.url}}" class="img-rounded">
+												<a href="#" class="remove" data-key="interior"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+											{{/each}}
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-12">
@@ -231,6 +249,16 @@
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosExterior">
 									</a>
+									<div class="photos">
+										<div class="row">
+											{{#each getPhotos 'exterior'}}
+											<div class="col-sm-1">
+												<img src="{{this.url}}" class="img-rounded">
+												<a href="#" class="remove" data-key="exterior"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+											{{/each}}
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-12">
@@ -240,6 +268,16 @@
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosViews">
 									</a>
+									<div class="photos">
+										<div class="row">
+											{{#each getPhotos 'views'}}
+											<div class="col-sm-1">
+												<img src="{{this.url}}" class="img-rounded">
+												<a href="#" class="remove" data-key="views"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+											{{/each}}
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-12">
@@ -249,14 +287,18 @@
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosBuilds">
 									</a>
+									<div class="photos">
+										<div class="row">
+											{{#each getPhotos 'builds'}}
+											<div class="col-sm-1">
+												<img src="{{this.url}}" class="img-rounded">
+												<a href="#" class="remove" data-key="builds"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+											{{/each}}
+										</div>
+									</div>
 								</div>
 							</div>
-						
-						<!-- 
-						<div class="form-group">
-							<input type="text" class="form-control" id="plan-name" placeholder="Názov"similarPlans	"Podobné domy">
-						</div>
-						-->
 
 							<div class="col-sm-4">
 								<div class="form-group">
@@ -280,7 +322,7 @@
 								<div class="form-group">
 									<label>Realizované</label>
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-built">
+										<input type="text" class="form-control" id="plan-built" value="{{dateFormat built}}">
 										<div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
 									</div>
 								</div>
@@ -297,7 +339,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Pridať projekt</button>
+						<button type="submit" class="btn btn-success">Uložiť zmeny</button>
 					</div>
 				</div>
 				{{/with}}

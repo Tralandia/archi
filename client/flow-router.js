@@ -7,7 +7,7 @@ FlowRouter.route('/', {
 	}
 });
 
-FlowRouter.route('/detail', {
+FlowRouter.route('/:p1', {
 	name: 'Detail',
 	action: function(params, queryParams) {
 		BlazeLayout.render('DefaultLayout', {
