@@ -1,8 +1,26 @@
 <template name="footer">
-	<footer>
-		<p class="text-center">
-			Architekti.sk 2016 &copy;
-			{{#unless currentUser}} | <a href="#admin-login-modal" data-toggle="modal">Admin</a>{{/unless}}
-		</p>
-	</footer>
+
+	<section class="bg-dark" id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-3 text-center">
+					<i class="fa fa-phone fa-3x wow bounceIn"></i>
+					<p>123-456-6789</p>
+				</div>
+				<div class="col-lg-2 text-center">
+					<i class="fa fa-copyright fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+					<p>PP developing, s.r.o.</p>
+				</div>
+				<div class="col-lg-2 text-center">
+					<i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+					<p><a href="mailto:info@ppdeveloping.sk">info@ppdeveloping.sk</a></p>
+				</div>
+				{{#unless currentUser}}
+				<div class="col-lg-2 text-center">
+					<a href="#admin-login-modal" data-toggle="modal">Admin</a>
+				</div>
+				{{/unless}}
+			</div>
+		</div>
+	</section>
 </template>

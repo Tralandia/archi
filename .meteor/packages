@@ -28,3 +28,7 @@ cfs:standard-packages
 cfs:graphicsmagick
 cfs:gridfs
 momentjs:moment
+timmyg:wow
+mrt:fittext
+mrt:jquery-easing
+http

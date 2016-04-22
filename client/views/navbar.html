@@ -1,39 +1,35 @@
 <template name="navbar">
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-toggle-top">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/">Architekti.sk</a>
-		</div>
-		{{#if currentUser}}
-		<ul class="nav navbar-nav pull-right">
-			<li>
-				<a href="#create-plan-modal" data-toggle="modal">Pridať projekt</a>
-			</li>
-			<li>
-				<a href="#" class="logout">Odhlásiť</a>
-			</li>
-		</ul>
-		{{/if}}
-		<div class="collapse navbar-collapse" id="navbar-toggle-top">
-			<ul class="nav navbar-nav">
-				<li>
-					<a href="#">Projekty</a>
-				</li>
-				<li>
-					<a href="#">O nás</a>
-				</li>
-				<li>
-					<a href="#">Otázky</a>
-				</li>
-				<li>
-					<a href="#">Kontakt</a>
-				</li>
-			</ul>
+	<nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="/"><b>PP</b> developing, s.r.o.</a>
+				{{#if currentUser}}
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<a href="#create-plan-modal" data-toggle="modal">Pridať projekt</a>
+					</li>
+					<li>
+						<a href="#" class="logout">Odhlásiť</a>
+					</li>
+				</ul>
+				{{/if}}
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="page-scroll" href="#about">O nás</a></li>
+					<li><a class="page-scroll" href="#services">Služby</a></li>
+					<li><a class="page-scroll" href="#prices">Cenník</a></li>
+					<li><a class="page-scroll" href="#contact">Kontakt</a></li>
+					<li class="special"><a class="page-scroll" href="/katalog">Katalóg</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 </template>

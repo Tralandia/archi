@@ -1,28 +1,25 @@
 <template name="detail">
 	{{#with plan}}
-	<div class="project-detail">
-		<div class="well">
-			<div class="row">
-				<div class="col-md-9">
-					<h1>{{name}}</h1>
-					<p class="lead">{{description}}</p>
-				</div>
-				<div class="col-md-3">
-					<div class="project-attributes">
-						<div class="attribute"><span>Typ domu</span> {{getParameter type}}</div>
-						<div class="attribute"><span>Garáž</span> {{getParameter garage}}</div>
-						<div class="attribute"><span>Strecha</span> {{getParameter roof}}<sup>2</sup></div>
-					</div>
-					<a href="#" class="btn btn-primary btn-block btn-lg">Kúpiť projekt <i class="glyphicon glyphicon-euro pull-right"></i></a>
-				</div>
-			</div>
-		</div>
-
-		<div class="project-gallery">
-			<a href="#" class="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-			<a href="#" class="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-			<img class="img-responsive" src="{{galleryImage}}" alt="">
-		</div>
-	</div>
+    <section id="catalog">
+        <div class="container">
+            <p>{{description}}</p>
+            <h2>Video</h2>
+            <hr class="primary">
+            <div class="detail-video">
+                <iframe src="https://player.vimeo.com/video/125555548" width="1140" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <h2>Gléria</h2>
+            <hr class="primary">
+            <div class="detial-gallery">
+            	{{#each galleryImages}}
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="{{url}}" class="img-responsive">
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
 	{{/with}}
 </template>

@@ -1,34 +1,69 @@
 <template name="list">
-	<div class="list">
-		{{#each plans}}
-			{{> listItem}}
-		{{/each}}
-	</div>
+	<section id="catalog">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Katalóg</h1>
+                    <hr class="primary">
+                </div>
+            </div>
+			{{#each plans}}
+				{{> listItem}}
+			{{/each}}
+		</div>
+	</section>
 </template>
 
 <template name="listItem">
-	<div class="list-project">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="project-gallery">
-					{{#if currentUser}}
-						<a href="#" class="edit"><i class="glyphicon glyphicon-pencil"></i></a>
-					{{/if}}
-					<a href="#" class="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-					<a href="#" class="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-					<img class="img-responsive" src="{{galleryImage}}" alt="">
-				</div>
-			</div>
-			<div class="col-md-3">
-				<h1>{{name}}</h1>
-				<p class="lead">{{short description 400}}</p>
-				<div class="project-attributes">
+	<div class="catalog-row">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="/katalog/{{slug}}" class="portfolio-box">
+                    <img src="{{galleryImage}}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Zobraziť detaily
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2><a href="/katalog/{{slug}}">{{name}}</a></h2>
+                <p>{{short description 400}}</p>
+                <div class="project-attributes">
 					<div class="attribute"><span>Typ domu</span> {{getParameter type}}</div>
 					<div class="attribute"><span>Garáž</span> {{getParameter garage}}</div>
-					<div class="attribute"><span>Strecha</span> {{getParameter roof}}<sup>2</sup></div>
-				</div>
-				<a href="/{{slug}}" class="btn btn-primary btn-lg">Detaily / Kúpiť projekt <i class="glyphicon glyphicon-chevron-right pull-right"></i></a>
-			</div>
-		</div>
-	</div>
+					<div class="attribute"><span>Strecha</span> {{getParameter roof}}</div>
+                </div>
+				{{#if currentUser}}
+					<a href="#" class="edit"><i class="glyphicon glyphicon-pencil"></i> Upraviť projekt</a>
+				{{/if}}
+                <div class="list-thumbnails">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_102.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_084.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_100.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_058.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_058.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-2">
+                            <a href="#" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
 </template>
