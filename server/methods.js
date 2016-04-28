@@ -42,6 +42,6 @@ Meteor.methods({
 		}});
 	},
 	removePlan: function(_id) {
-
+		return Plan.remove(_id);
 	}
 });

@@ -1,4 +1,5 @@
 Template.detail.onRendered(function() {
+	$(window).scrollTop(0);
     new WOW().init();
 });
 

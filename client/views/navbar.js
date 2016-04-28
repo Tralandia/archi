@@ -7,11 +7,21 @@ Template.navbar.onRendered(function() {
             top: 100
         }
     });
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
 });
 
 Template.navbar.events({
 	'click .logout': function(e, t) {
 		e.preventDefault();
 		Meteor.logout();
-	}
+	},
+    'click .page-scroll': function(e, t) {
+        FlowRouter.go('/');
+    }
 });

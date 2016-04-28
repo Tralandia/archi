@@ -73,6 +73,19 @@ section#footer {
 section#footer a {
     color: #fff;
 }
+section#catalog {
+    padding: 30px 0;
+}
+section#catalog-header {
+    padding: 114px 0 30px;
+}
+section#catalog-header h1 {
+    margin: 0;
+}
+
+.plans-filter {
+
+}
 
 aside {
     padding: 50px 0;
@@ -82,7 +95,7 @@ aside {
     padding: 0;
 }
 
-.navbar-inverse {
+.navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     background-color: #fff;
@@ -91,92 +104,112 @@ aside {
     transition: all .35s;
 }
 
-.navbar-inverse .navbar-header .navbar-brand {
+.navbar-default .navbar-header .navbar-brand {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    font-weight: 700;
-    color: #fff;
+    font-weight: normal;
+    color: #555;
+    padding: 0;
+    margin: 22px 0 0;
+    font-size: 14px;
+    height: auto;
+    position: relative;
 }
-.navbar-inverse .navbar-header .navbar-brand b {
+.navbar-default .navbar-header .navbar-brand b {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 2px;
     color: #f05f40;
 }
+.navbar-default .navbar-header .navbar-brand .logo {
+    background-image: url(/images/logo.png);
+    background-size: 100%;
+    position: absolute;
+    right: -25px;
+    top: -1px;
+    width: 105px;
+    height: 39px;
+}
 
-.navbar-inverse .navbar-header .navbar-brand:hover,
-.navbar-inverse .navbar-header .navbar-brand:focus {
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
     color: #eb3812;
 }
 
-.navbar-inverse .nav > li>a,
-.navbar-inverse .nav>li>a:focus {
-    font-size: 13px;
-    font-weight: 700;
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    font-size: 15px;
+    font-weight: normal;
     color: #222;
-}
-.navbar-inverse .nav > li.special a,
-.navbar-inverse .nav > li.special a:focus {
-    background: #f05f40;
-    color: #fff;
+    padding: 32px 15px;
 }
 
-.navbar-inverse .nav > li>a:hover,
-.navbar-inverse .nav>li>a:focus:hover {
-    color: #f05f40;
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+    color: #000;
 }
 
-.navbar-inverse .nav > li.active>a,
-.navbar-inverse .nav>li.active>a:focus {
+.navbar-default .nav > li.active>a,
+.navbar-default .nav>li.active>a:focus {
     color: #f05f40!important;
     background-color: transparent;
 }
 
-.navbar-inverse .nav > li.active>a:hover,
-.navbar-inverse .nav>li.active>a:focus:hover {
+.navbar-default .nav > li.active>a:hover,
+.navbar-default .nav>li.active>a:focus:hover {
     background-color: transparent;
+}
+.navbar-default .nav > li.special a,
+.navbar-default .nav > li.special a:focus {
+    background: #f05f40;
+    color: #fff;
+    padding: 12px 20px;
+    margin: 20px 30px 20px 10px;
+    border-radius: 10px;
+}
+.navbar-default .nav > li.special a:hover,
+.navbar-default .nav > li.special a:focus:hover {
+    color: #fff;
 }
 
 @media(min-width:768px) {
-    .navbar-inverse {
-        border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+    .navbar-default {
+        border: none;
+        background-color: #fff;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
     }
 
-    .navbar-inverse .navbar-header .navbar-brand:hover,
-    .navbar-inverse .navbar-header .navbar-brand:focus {
-        color: #fff;
+    .navbar-default .navbar-header .navbar-brand {
+        margin-left: 0;
+    }
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #222;
     }
 
-    .navbar-inverse .nav > li>a,
-    .navbar-inverse .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgba(0,0,0,.7);
     }
 
-    .navbar-inverse .nav > li>a:hover,
-    .navbar-inverse .nav>li>a:focus:hover {
-        color: #fff;
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #222;
+    }
+    
+    .navbar-default.affix .navbar-header .navbar-brand {
+        padding: 0;
+        margin: 13px 0;
     }
 
-    .navbar-inverse.affix {
-        border-color: rgba(34,34,34,.05);
-        background-color: #222;
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        padding: 17px 15px;
+        margin-top: 8px;
     }
-
-    .navbar-inverse.affix .navbar-header .navbar-brand {
-        font-size: 14px;
-        color: #fff;
-    }
-
-    .navbar-inverse.affix .navbar-header .navbar-brand:hover,
-    .navbar-inverse.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
-    }
-
-    .navbar-inverse.affix .nav > li>a,
-    .navbar-inverse.affix .nav>li>a:focus {
-        color: #fff;
-    }
-
-    .navbar-inverse.affix .nav > li>a:hover,
-    .navbar-inverse.affix .nav>li>a:focus:hover {
-        color: #f05f40;
+    .navbar-default.affix .nav > li.special>a,
+    .navbar-default.affix .nav>li.special>a:focus {
+        padding: 17px 15px;
+        margin: 8px 0 0;
     }
 }
 
@@ -218,14 +251,14 @@ header .header-content .header-content-inner p {
     font-weight: 300;
     color: rgba(255,255,255,.8);
 }
-header .header-content .header-content-inner .project-attributes {
+header .header-content .header-content-inner .plan-attributes {
     color: rgba(255,255,255,.8);
     background: rgba(0,0,0,0.5);
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
 }
-.project-attributes span {
+.plan-attributes span {
     color: #999;
 }
 
@@ -474,7 +507,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 #catalog .catalog-row {
-    margin: 30px 15px 30px;
+    margin: 30px 0 30px;
     position: relative;
 }
 #catalog .catalog-row h2 {

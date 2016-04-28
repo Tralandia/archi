@@ -1,6 +1,15 @@
 Template.listItem.helpers({
 	galleryImage: function() {
-		return Images.findOne(this.photos.interior[0]).url();
+		if (this.photos && this.photos.interior && this.photos.interior.length) {
+			var image = Images.findOne(this.photos.interior[0]);
+			if (image) {
+				return image.url();
+			} else {
+				return A.imagePlaceholder;
+			}
+		} else {	
+			return A.imagePlaceholder;
+		}
 	}
 });
 

@@ -175,5 +175,20 @@ Template.editPlanModal.events({
 
 		Images.remove(this._id);
 		Plan.update(planId, update);
+	},
+	'click a#remove-plan': function(e, t) {
+		e.preventDefault();
+
+		if (confirm("Naozaj chcete vymazať tento projekt?")) {
+		 	Meteor.call('removePlan', this._id, function(error, result) {
+		 		if (error) {
+		 			console.log(error);
+		 		} else {
+		 			console.log(result);
+		 			Session.set("editPlanId", false);
+		 			$("#edit-plan-modal").modal("hide");
+		 		}
+		 	});
+		}
 	}
 });

@@ -1,12 +1,18 @@
 <template name="list">
-	<section id="catalog">
-        <div class="container-fluid">
+    <section id="catalog-header" class="bg-dark">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-3">
                     <h1>Katalóg</h1>
-                    <hr class="primary">
+                </div>
+                <div class="col-lg-9">
+                    {{> filter}}
                 </div>
             </div>
+        </div>
+    </section> 
+    <section id="catalog">
+        <div class="container">
 			{{#each plans}}
 				{{> listItem}}
 			{{/each}}

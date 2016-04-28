@@ -9,18 +9,24 @@ Template.headerFull.helpers({
 			var plan = Plan.findOne({
 				slug: planId
 			});
+
 			if (plan) {
+                var description = '<div class="plan-attributes">' +
+					'<div class="attribute"><span>Typ domu:</span> ' + getParameter(plan.type) + '</div>' +
+					'<div class="attribute"><span>Garáž:</span> ' + getParameter(plan.garage) + '</div>' +
+					'<div class="attribute"><span>Strecha:</span> ' + getParameter(plan.roof) + '</div>' +
+                '</div>';
 				return {
-					coverImage: 'http://127.0.0.1:3000' + Images.findOne(plan.photos.interior[0]).url(),
+					coverImage: 'http://localhost:3040/' + Images.findOne(plan.photos.interior[0]).url(),
 					title: plan.name,
-					description: '<p>' + plan.description + '</p>'
+					description: description
 				}
 			}
 		} else if (this == 'home') {
 			return {
-				coverImage: 'http://www.architekti.sk/files/49ca0337fef0c21dbd7ed95a829ba52d.jpg',
+				coverImage: 'http://www.architekti.sk/files/255d4ec23095e2b52363a5314ee79cc8.jpg',
 				title: 'Kvalita rozhoduje',
-				description: '<p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p><a href="#about" class="btn btn-primary btn-xl page-scroll">Pozrite si náš katalóg</a>'
+				description: '<a href="/katalog" class="btn btn-primary btn-xl page-scroll">Pozrite si náš katalóg</a>'
 			}
 		}
 	}
