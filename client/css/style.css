@@ -109,7 +109,7 @@ aside {
     font-weight: normal;
     color: #555;
     padding: 0;
-    margin: 22px 0 0;
+    margin: 22px 10px 0;
     font-size: 14px;
     height: auto;
     position: relative;
@@ -171,6 +171,14 @@ aside {
     color: #fff;
 }
 
+.navbar-default .nav.admin-nav > li a {
+    margin-top: 35px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #f05f40;
+}
+
 @media(min-width:768px) {
     .navbar-default {
         border: none;
@@ -198,18 +206,25 @@ aside {
     
     .navbar-default.affix .navbar-header .navbar-brand {
         padding: 0;
-        margin: 13px 0;
+        margin: 13px 10px 13px 0;
     }
 
-    .navbar-default.affix .nav > li>a,
-    .navbar-default.affix .nav>li>a:focus {
+    .navbar-default.affix .nav > li > a,
+    .navbar-default.affix .nav > li > a:focus {
         padding: 17px 15px;
         margin-top: 8px;
     }
-    .navbar-default.affix .nav > li.special>a,
-    .navbar-default.affix .nav>li.special>a:focus {
+
+    .navbar-default.affix .nav > li.special > a,
+    .navbar-default.affix .nav > li.special > a:focus {
         padding: 17px 15px;
         margin: 8px 0 0;
+    }
+
+    .navbar-default.affix .nav.admin-nav > li > a,
+    .navbar-default.affix .nav.admin-nav > li > a:focus {
+        padding: 10px;
+        margin-top: 26px;
     }
 }
 

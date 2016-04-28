@@ -48,21 +48,11 @@
 				{{/if}}
                 <div class="list-thumbnails">
                     <div class="row">
+                        {{#each thumbnails}}
                         <div class="col-md-2">
-                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_102.jpg" class="img-responsive">
+                            <img src="{{url}}" class="img-responsive">
                         </div>
-                        <div class="col-md-2">
-                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_084.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-md-2">
-                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_100.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-md-2">
-                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_058.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-md-2">
-                            <img src="http://apsp.sk/wp-content/uploads/2016/03/rd_fri_058.jpg" class="img-responsive">
-                        </div>
+                        {{/each}}
                         <div class="col-md-2">
                             <a href="#" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
                         </div>
