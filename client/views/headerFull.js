@@ -16,11 +16,17 @@ Template.headerFull.helpers({
 					'<div class="attribute"><span>Garáž:</span> ' + getParameter(plan.garage) + '</div>' +
 					'<div class="attribute"><span>Strecha:</span> ' + getParameter(plan.roof) + '</div>' +
                 '</div>';
-				return {
-					coverImage: 'http://localhost:3040/' + Images.findOne(plan.photos.interior[0]).url(),
-					title: plan.name,
-					description: description
-				}
+                var image = Images.findOne(plan.photos.interior[0]);
+                if (image) {
+                	Meteor.setTimeout(function() {
+						$('header').prependTo('body');
+                	});
+					return {
+						coverImage: 'http://localhost:3040/' + (image ? image.url() : A.imagePlaceholder),
+						title: plan.name,
+						description: description
+					}
+                }
 			}
 		} else if (this == 'home') {
 			return {

@@ -2,7 +2,7 @@
 	<div class="plans-filter">
 		<form class="form">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<select class="form-control">
 						<option>- typ domu -</option>
 						{{#each getParameters "project-type"}}
@@ -10,7 +10,7 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<select class="form-control">
 						<option>- garáž -</option>
 						{{#each getParameters "garage-type"}}
@@ -18,7 +18,7 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<select class="form-control">
 						<option>- strecha -</option>
 						{{#each getParameters "roof-type"}}
@@ -26,14 +26,14 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="col-md-3">
+				<!-- <div class="col-md-3">
 					<select class="form-control">
 						<option>- veľkosť -</option>
 						{{#each getParameters "project-size"}}
 						<option value="{{_id}}">{{name}}</option>
 						{{/each}}
 					</select>
-				</div>
+				</div> -->
 			</div>
 		</form>
 	</div>

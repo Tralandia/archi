@@ -109,7 +109,7 @@ aside {
     font-weight: normal;
     color: #555;
     padding: 0;
-    margin: 22px 10px 0;
+    margin: 22px 30px 0;
     font-size: 14px;
     height: auto;
     position: relative;
@@ -163,7 +163,7 @@ aside {
     background: #f05f40;
     color: #fff;
     padding: 12px 20px;
-    margin: 20px 30px 20px 10px;
+    margin: 20px 0 20px 10px;
     border-radius: 10px;
 }
 .navbar-default .nav > li.special a:hover,
@@ -172,11 +172,21 @@ aside {
 }
 
 .navbar-default .nav.admin-nav > li a {
-    margin-top: 35px;
+    margin-top: 25px;
     padding: 10px;
     font-size: 12px;
     font-weight: bold;
     color: #f05f40;
+}
+.navbar-default .nav.admin-nav > li span {
+    padding: 36px 10px 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
 }
 
 @media(min-width:768px) {
@@ -206,7 +216,7 @@ aside {
     
     .navbar-default.affix .navbar-header .navbar-brand {
         padding: 0;
-        margin: 13px 10px 13px 0;
+        margin: 13px 30px 13px 0;
     }
 
     .navbar-default.affix .nav > li > a,
@@ -224,7 +234,11 @@ aside {
     .navbar-default.affix .nav.admin-nav > li > a,
     .navbar-default.affix .nav.admin-nav > li > a:focus {
         padding: 10px;
-        margin-top: 26px;
+        margin-top: 15px;
+    }
+    .navbar-default.affix .nav.admin-nav > li span {
+        padding: 26px 10px 0;
+        margin: 0;
     }
 }
 
@@ -525,6 +539,11 @@ fieldset[disabled] .btn-primary.active {
     margin: 30px 0 30px;
     position: relative;
 }
+#catalog .catalog-row a.edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 #catalog .catalog-row h2 {
     margin-top: 0;
 }
@@ -537,6 +556,9 @@ fieldset[disabled] .btn-primary.active {
 #catalog .catalog-row .list-thumbnails {
     position: absolute;
     bottom: 0px;
+    right: 0;
+    left: 50%;
+    padding-left: 15px;
 }
 #catalog .catalog-row .list-thumbnails .thumbnail {
     margin: 0;
@@ -545,6 +567,13 @@ fieldset[disabled] .btn-primary.active {
     display: block;
     text-align: center;
     padding: 12px 0;
+}
+#catalog .catalog-row .list-thumbnails .img {
+    height: 48px;
+    display: block;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
 }
 #catalog .detial-gallery {}
 #catalog .detial-gallery .img-responsive {

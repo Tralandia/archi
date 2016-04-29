@@ -9,11 +9,6 @@ Template.detail.helpers({
 		return Plan.findOne({slug: slug});
 	},
 	galleryImages: function() {
-		console.log(Images.find({
-			_id: {
-				$in: this.photos.interior
-			}
-		}).fetch())
 		return Images.find({
 			_id: {
 				$in: this.photos.interior

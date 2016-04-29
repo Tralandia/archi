@@ -31,7 +31,7 @@ Template.listItem.helpers({
 			});
 
 			thumbnails.shift();
-			console.log(thumbnails)
+			// console.log(thumbnails)
 
 			if (thumbnails.length > 1) {
 				return thumbnails;

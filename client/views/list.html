@@ -2,10 +2,10 @@
     <section id="catalog-header" class="bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <h1>Katalóg</h1>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-6">
                     {{> filter}}
                 </div>
             </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-sm-6">
                 <h2><a href="/katalog/{{slug}}">{{name}}</a></h2>
-                <p>{{short description 400}}</p>
+                <p>{{short description 200}}</p>
                 <div class="project-attributes">
 					<div class="attribute"><span>Typ domu</span> {{getParameter type}}</div>
 					<div class="attribute"><span>Garáž</span> {{getParameter garage}}</div>
@@ -50,11 +50,11 @@
                     <div class="row">
                         {{#each thumbnails}}
                         <div class="col-md-2">
-                            <img src="{{url}}" class="img-responsive">
+                            <a href="/katalog/{{slug}}" class="img" style="background-image: url({{url}})"></a>
                         </div>
                         {{/each}}
                         <div class="col-md-2">
-                            <a href="#" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
+                            <a href="/katalog/{{slug}}" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
