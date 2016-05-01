@@ -74,7 +74,7 @@ section#footer a {
     color: #fff;
 }
 section#catalog {
-    padding: 10px 0 30px 0;
+    padding: 0;
 }
 section#catalog-header {
     padding: 114px 0 30px;
@@ -98,10 +98,7 @@ aside {
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #fff;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
+    background: #fff;
 }
 
 .navbar-default .navbar-header .navbar-brand {
@@ -160,7 +157,8 @@ aside {
 }
 .navbar-default .nav > li.special a,
 .navbar-default .nav > li.special a:focus {
-    background: #f05f40;
+    background: #333;
+    text-transform: uppercase;
     color: #fff;
     padding: 12px 20px;
     margin: 20px 0 20px 10px;
@@ -168,6 +166,7 @@ aside {
 }
 .navbar-default .nav > li.special a:hover,
 .navbar-default .nav > li.special a:focus:hover {
+    background: #f05f40;
     color: #fff;
 }
 
@@ -254,10 +253,11 @@ header .header-content .header-content-inner .plan-attributes {
 .portfolio-box {
     display: block;
     position: relative;
-    margin: 0 auto;
+    margin:-30px 0 -30px -30px;
 }
 
 .portfolio-box .portfolio-box-caption {
+    border-radius: 5px;
     display: block;
     position: absolute;
     bottom: 0;
@@ -266,7 +266,7 @@ header .header-content .header-content-inner .plan-attributes {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(240,95,64,.9);
+    background: rgba(0,0,0,.2);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -426,9 +426,6 @@ fieldset[disabled] .btn-primary.active {
     background-color: #f05f40;
 }
 
-#catalog hr {
-    margin-left: 15px;
-}
 #catalog h1 {
     margin-top: 0;
     margin-left: 10px;
@@ -439,13 +436,26 @@ fieldset[disabled] .btn-primary.active {
 }
 
 #catalog .catalog-row {
-    margin: 30px 0 30px;
+    margin: 0;
     position: relative;
+    padding: 30px;
+}
+#catalog .catalog-row:last-child {
+    border: none;
+}
+#catalog .catalog-row:nth-child(2n) {
+    background: #efefef;
+}
+#catalog .catalog-row .project-attributes .attribute {
+    color: #f05f40;
+}
+#catalog .catalog-row .project-attributes .attribute span {
+    color: #666;
 }
 #catalog .catalog-row a.edit {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 30px;
+    top: 30px;
 }
 #catalog .catalog-row h2 {
     margin-top: 0;
@@ -458,18 +468,21 @@ fieldset[disabled] .btn-primary.active {
 }
 #catalog .catalog-row .list-thumbnails {
     position: absolute;
-    bottom: 0px;
-    right: 0;
+    bottom: 30px;
+    right: 30px;
     left: 50%;
     padding-left: 15px;
 }
 #catalog .catalog-row .list-thumbnails .thumbnail {
     margin: 0;
+    background: #f05f40;
+    color: #fff;
+    border: none;
 }
 #catalog .catalog-row .list-thumbnails .thumbnail i.fa {
     display: block;
     text-align: center;
-    padding: 12px 0;
+    padding: 13px 0;
 }
 #catalog .catalog-row .list-thumbnails .img {
     height: 48px;
@@ -477,6 +490,7 @@ fieldset[disabled] .btn-primary.active {
     overflow: hidden;
     background-position: center;
     background-size: cover;
+    border-radius: 5px;
 }
 #catalog .detial-gallery {}
 #catalog .detial-gallery .img-responsive {

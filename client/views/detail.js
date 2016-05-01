@@ -1,5 +1,6 @@
 Template.detail.onRendered(function() {
 	$(window).scrollTop(0);
+	$('.detail-video').fitVids();
     new WOW().init();
 });
 

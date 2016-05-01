@@ -23,5 +23,8 @@ Template.navbar.events({
 	},
     'click .page-scroll': function(e, t) {
         FlowRouter.go('/');
+    },
+    'click li.special a': function(e, t) {
+        $(window).scrollTop(0);
     }
 });

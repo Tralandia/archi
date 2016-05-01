@@ -69,8 +69,8 @@
 
     .navbar-default.affix .nav > li.special > a,
     .navbar-default.affix .nav > li.special > a:focus {
-        padding: 17px 15px;
-        margin: 8px 0 0;
+        padding: 12px 20px;
+        margin: 12px 0 0;
     }
 
     .navbar-default.affix .nav.admin-nav > li > a,
