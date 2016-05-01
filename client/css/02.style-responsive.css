@@ -1,0 +1,156 @@
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+        font-size: 16px;
+    }
+
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+        font-size: 22px;
+    }
+    .navbar-default {
+        border: none;
+        background-color: #fff;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    }
+
+    .navbar-default .navbar-header .navbar-brand {
+        margin-left: 0;
+    }
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #222;
+    }
+
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgba(0,0,0,.7);
+    }
+
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #222;
+    }
+    
+    .navbar-default.affix .navbar-header .navbar-brand {
+        padding: 0;
+        margin: 13px 30px 13px 0;
+    }
+
+    .navbar-default.affix .nav > li > a,
+    .navbar-default.affix .nav > li > a:focus {
+        padding: 17px 15px;
+        margin-top: 8px;
+    }
+
+    .navbar-default.affix .nav > li.special > a,
+    .navbar-default.affix .nav > li.special > a:focus {
+        padding: 17px 15px;
+        margin: 8px 0 0;
+    }
+
+    .navbar-default.affix .nav.admin-nav > li > a,
+    .navbar-default.affix .nav.admin-nav > li > a:focus {
+        padding: 10px;
+        margin-top: 15px;
+    }
+    .navbar-default.affix .nav.admin-nav > li span {
+        padding: 26px 10px 0;
+        margin: 0;
+    }
+}
+
+@media(min-width:992px) {
+    .service-box {
+        margin: 20px auto 0;
+    }
+}
+
+@media(max-width:768px) {
+    .navbar-default .navbar-header .navbar-brand {
+        margin: 15px 0 10px 15px;
+    }
+    #catalog hr {
+        display: none;
+    }
+    #catalog .catalog-row {
+        margin: 15px 0;
+    }
+    #catalog .catalog-row .list-thumbnails {
+        display: none;
+        position: relative;
+    }
+    #catalog .catalog-row h2 {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.5);
+        font-size: 18px;
+        padding: 10px;
+    }
+    #catalog .catalog-row h2 a {
+        color: #fff;
+    }
+    #catalog .catalog-row .portfolio-box {
+        margin-bottom: 10px;
+    }
+    #catalog .catalog-row .project-attributes {
+        background: rgba(0,0,0,0.5);
+        padding: 10px;
+        position: absolute;
+        left: 10px;
+        top: 50px;
+        color: #fff;
+    }
+    #catalog .catalog-row .project-attributes span {
+        color: rgba(255,255,255,0.5);
+    }
+    .navbar-default .navbar-toggle {
+        margin: 16px 15px;
+    }
+    .navbar-default .nav > li>a, 
+    .navbar-default .nav>li>a:focus {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    .navbar-default .nav > li.special>a, 
+    .navbar-default .nav > li.special>a:focus {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    section#catalog-header {
+        padding: 83px 0 15px;
+    }
+    section#catalog-header h1 {
+        margin-bottom: 5px;
+    }
+    section#catalog-header .plans-filter .form-control {
+        margin-top: 10px;
+    }
+}
