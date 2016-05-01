@@ -68,7 +68,7 @@ section {
     padding: 100px 0;
 }
 section#footer {
-    padding: 50px 0;
+    padding: 50px 0 30px;
 }
 section#footer a {
     color: #fff;
@@ -81,6 +81,18 @@ section#catalog-header {
 }
 section#catalog-header h1 {
     margin: 0;
+    line-height: 34px;
+    font-size: 34px;
+    vertical-align: top;
+}
+section#catalog-detail {
+    padding: 30px 0;
+}
+section#catalog-detail h2 {
+    margin: 30px 0 15px;
+}
+section#catalog-detail .detail-gallery img {
+    margin-bottom: 15px;
 }
 
 .plans-filter {
@@ -161,8 +173,9 @@ aside {
     text-transform: uppercase;
     color: #fff;
     padding: 12px 20px;
-    margin: 20px 0 20px 10px;
+    margin: 15px 0 15px 10px;
     border-radius: 10px;
+    border: 5px solid #f05f40;
 }
 .navbar-default .nav > li.special a:hover,
 .navbar-default .nav > li.special a:focus:hover {
@@ -233,6 +246,13 @@ header .header-content .header-content-inner .plan-attributes {
     display: inline-block;
     border-radius: 10px;
 }
+header .header-content .header-content-inner .plan-attributes .attribute {
+    color: #fff;
+}
+header .header-content .header-content-inner .plan-attributes .attribute span {
+    color: rgba(255,255,255,0.5);
+}
+
 .plan-attributes span {
     color: #999;
 }
@@ -463,14 +483,14 @@ fieldset[disabled] .btn-primary.active {
 #catalog .catalog-row h2 a {
     color: #222;
 }
-#catalog .catalog-row > .row > .col-sm-6 {
+#catalog .catalog-row > .row > [class*="col-"] {
     position: initial;
 }
 #catalog .catalog-row .list-thumbnails {
     position: absolute;
     bottom: 30px;
     right: 30px;
-    left: 50%;
+    left: 66.66666667%;
     padding-left: 15px;
 }
 #catalog .catalog-row .list-thumbnails .thumbnail {

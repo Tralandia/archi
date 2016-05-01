@@ -1,12 +1,14 @@
 Template.detail.onRendered(function() {
 	$(window).scrollTop(0);
-	$('.detail-video').fitVids();
     new WOW().init();
 });
 
 Template.detail.helpers({
 	plan: function() {
 		var slug = FlowRouter.current().params.p1;
+		Meteor.setTimeout(function() {
+			$('.detail-video').fitVids();
+		})
 		return Plan.findOne({slug: slug});
 	},
 	galleryImages: function() {

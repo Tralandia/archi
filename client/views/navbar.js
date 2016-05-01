@@ -9,8 +9,10 @@ Template.navbar.onRendered(function() {
     });
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+        var offset = $($anchor.attr('href')).offset();
+        if (!offset) return;
         $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+            scrollTop: (offset.top - 50)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     });

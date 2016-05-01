@@ -2,11 +2,18 @@
 	<section id="catalog-header" class="bg-dark">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-md-3">
 					<h1>Katalóg</h1>
 				</div>
-				<div class="col-lg-6">
-					{{> filter}}
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-4">
+							<label class="form-label">Filter projektov:</label>
+						</div>
+						<div class="col-md-8">
+							{{> filter}}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -21,7 +28,7 @@
 <template name="listItem">
 	<div class="catalog-row">
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-8">
 				<a href="/katalog/{{slug}}" class="portfolio-box">
 					<img src="{{galleryImage}}" class="img-responsive" alt="">
 					<div class="portfolio-box-caption">
@@ -33,7 +40,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<h2><a href="/katalog/{{slug}}">{{name}}</a></h2>
 				<p>{{short description 200}}</p>
 				<div class="project-attributes">
@@ -47,11 +54,11 @@
 				<div class="list-thumbnails">
 					<div class="row">
 						{{#each thumbnails}}
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<a href="/katalog/{{slug}}" class="img" style="background-image: url({{url}})"></a>
 						</div>
 						{{/each}}
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<a href="/katalog/{{slug}}" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
 						</div>
 					</div>

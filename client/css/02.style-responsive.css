@@ -58,18 +58,18 @@
     
     .navbar-default.affix .navbar-header .navbar-brand {
         padding: 0;
-        margin: 13px 30px 13px 0;
+        margin: 15px 30px 11px 0;
     }
 
     .navbar-default.affix .nav > li > a,
     .navbar-default.affix .nav > li > a:focus {
         padding: 17px 15px;
-        margin-top: 8px;
+        margin-top: 7px;
     }
 
     .navbar-default.affix .nav > li.special > a,
     .navbar-default.affix .nav > li.special > a:focus {
-        padding: 12px 20px;
+        padding: 7px 20px;
         margin: 12px 0 0;
     }
 
@@ -82,6 +82,13 @@
         padding: 26px 10px 0;
         margin: 0;
     }
+    section#catalog-header label.form-label {
+        color: #ddd;
+        text-transform: uppercase;
+        margin: 8px 0 0 0;
+        float: right;
+        font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    }
 }
 
 @media(min-width:992px) {
@@ -91,6 +98,10 @@
 }
 
 @media(max-width:768px) {
+    .navbar-fixed-top .navbar-collapse,
+    .navbar-fixed-bottom .navbar-collapse {
+        max-height: 300px;
+    }
     .navbar-default .navbar-header .navbar-brand {
         margin: 15px 0 10px 15px;
     }
@@ -98,7 +109,8 @@
         display: none;
     }
     #catalog .catalog-row {
-        margin: 15px 0;
+        margin: 0;
+        padding: 15px 15px 10px 15px;
     }
     #catalog .catalog-row .list-thumbnails {
         display: none;
@@ -106,9 +118,8 @@
     }
     #catalog .catalog-row h2 {
         position: absolute;
-        top: 0px;
-        left: 0;
-        right: 0;
+        top: 30px;
+        left: 0px;
         background: rgba(0,0,0,0.5);
         font-size: 18px;
         padding: 10px;
@@ -117,18 +128,10 @@
         color: #fff;
     }
     #catalog .catalog-row .portfolio-box {
-        margin-bottom: 10px;
+        margin: -15px -15px 15px -15px;
     }
     #catalog .catalog-row .project-attributes {
-        background: rgba(0,0,0,0.5);
-        padding: 10px;
-        position: absolute;
-        left: 10px;
-        top: 50px;
-        color: #fff;
-    }
-    #catalog .catalog-row .project-attributes span {
-        color: rgba(255,255,255,0.5);
+        display: none;
     }
     .navbar-default .navbar-toggle {
         margin: 16px 15px;
@@ -152,5 +155,9 @@
     }
     section#catalog-header .plans-filter .form-control {
         margin-top: 10px;
+    }
+
+    section#catalog-detail {
+        padding: 15px 0;
     }
 }

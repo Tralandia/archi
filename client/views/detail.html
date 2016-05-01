@@ -1,16 +1,14 @@
 <template name="detail">
 	{{#with plan}}
-    <section id="catalog">
+    <section id="catalog-detail">
         <div class="container">
             <p>{{description}}</p>
             <h2>Video</h2>
-            <hr class="primary">
             <div class="detail-video">
                 <iframe src="https://player.vimeo.com/video/125555548" width="1140" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <h2>Gléria</h2>
-            <hr class="primary">
-            <div class="detial-gallery">
+            <div class="detail-gallery">
             	{{#each galleryImages}}
                 <div class="row">
                     <div class="col-md-12">

@@ -19,7 +19,7 @@ Template.listItem.helpers({
 			_.each(A.photoTypes, function(photoType) {
 				if (photos[photoType]) {
 					_.each(photos[photoType], function(imageId) {
-						if (thumbnails.length > 5) return;
+						if (thumbnails.length > 3) return;
 						var image = Images.findOne(imageId);
 						if (image) {
 							thumbnails.push({

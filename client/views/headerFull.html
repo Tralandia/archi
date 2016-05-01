@@ -6,6 +6,10 @@
 				<h1>{{title}}</h1>
 				<hr>
 				{{{description}}}
+				{{#if userEdit}}
+					<hr>
+					<a href="#" class="btn btn-primary edit"><i class="glyphicon glyphicon-pencil"></i> Upraviť projekt</a>
+				{{/if}}
 			</div>
 		</div>
 	</header>
