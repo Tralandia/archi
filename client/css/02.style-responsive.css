@@ -25,6 +25,10 @@
         font-size: 18px;
     }
 
+    .navbar-right {
+        margin-right: 0;
+    }
+
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
         font-size: 16px;
     }

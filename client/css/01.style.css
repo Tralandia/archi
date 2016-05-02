@@ -222,11 +222,14 @@ header .header-content {
 }
 
 header .header-content .header-content-inner h1 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
-    -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
+    width: auto;
 }
 
 header .header-content .header-content-inner hr {
@@ -273,7 +276,9 @@ header .header-content .header-content-inner .plan-attributes .attribute span {
 .portfolio-box {
     display: block;
     position: relative;
-    margin:-30px 0 -30px -30px;
+    margin:0px 0 0px -30px;
+    border-radius: 0 5px 5px 0;
+    overflow: hidden;
 }
 
 .portfolio-box .portfolio-box-caption {
@@ -505,7 +510,8 @@ fieldset[disabled] .btn-primary.active {
     padding: 13px 0;
 }
 #catalog .catalog-row .list-thumbnails .img {
-    height: 48px;
+    height: 50px;
+    margin-top: 30px;
     display: block;
     overflow: hidden;
     background-position: center;

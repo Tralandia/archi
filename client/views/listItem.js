@@ -12,14 +12,16 @@ Template.listItem.helpers({
 		}
 	},
 	thumbnails: function() {
+		var n = 8; // number of photos
 		var photos = this.photos;
+
 		if (photos) {
 			var thumbnails = [];
 
 			_.each(A.photoTypes, function(photoType) {
 				if (photos[photoType]) {
 					_.each(photos[photoType], function(imageId) {
-						if (thumbnails.length > 3) return;
+						if (thumbnails.length > n) return;
 						var image = Images.findOne(imageId);
 						if (image) {
 							thumbnails.push({
@@ -40,6 +42,13 @@ Template.listItem.helpers({
 			}
 		} else {	
 			return []; //A.imagePlaceholder;
+		}
+	},
+	detailUrl: function() {
+		if (this.slug) {
+			return '/katalog/' + this.slug;
+		} else {
+			return '/katalog/' + Template.parentData(1).slug;
 		}
 	}
 });

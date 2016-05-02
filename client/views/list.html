@@ -29,7 +29,7 @@
 	<div class="catalog-row">
 		<div class="row">
 			<div class="col-sm-8">
-				<a href="/katalog/{{slug}}" class="portfolio-box">
+				<a href="{{detailUrl}}" class="portfolio-box">
 					<img src="{{galleryImage}}" class="img-responsive" alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
@@ -41,7 +41,7 @@
 				</a>
 			</div>
 			<div class="col-sm-4">
-				<h2><a href="/katalog/{{slug}}">{{name}}</a></h2>
+				<h2><a href="{{detailUrl}}">{{name}}</a></h2>
 				<p>{{short description 200}}</p>
 				<div class="project-attributes">
 					<div class="attribute"><span>Typ domu</span> {{getParameter type}}</div>
@@ -55,12 +55,9 @@
 					<div class="row">
 						{{#each thumbnails}}
 						<div class="col-md-3">
-							<a href="/katalog/{{slug}}" class="img" style="background-image: url({{url}})"></a>
+							<a href="{{detailUrl}}" class="img" style="background-image: url({{url}})"></a>
 						</div>
 						{{/each}}
-						<div class="col-md-3">
-							<a href="/katalog/{{slug}}" class="thumbnail"><i class="fa fa-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 			</div>
