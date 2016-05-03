@@ -28,7 +28,7 @@
 <template name="listItem">
 	<div class="catalog-row">
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-6">
 				<a href="{{detailUrl}}" class="portfolio-box">
 					<img src="{{galleryImage}}" class="img-responsive" alt="">
 					<div class="portfolio-box-caption">
@@ -40,7 +40,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<h2><a href="{{detailUrl}}">{{name}}</a></h2>
 				<p>{{short description 200}}</p>
 				<div class="project-attributes">
@@ -54,7 +54,7 @@
 				<div class="list-thumbnails">
 					<div class="row">
 						{{#each thumbnails}}
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<a href="{{detailUrl}}" class="img" style="background-image: url({{url}})"></a>
 						</div>
 						{{/each}}

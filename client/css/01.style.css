@@ -495,7 +495,7 @@ fieldset[disabled] .btn-primary.active {
     position: absolute;
     bottom: 30px;
     right: 30px;
-    left: 66.66666667%;
+    left: 50%;
     padding-left: 15px;
 }
 #catalog .catalog-row .list-thumbnails .thumbnail {

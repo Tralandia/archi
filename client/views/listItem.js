@@ -12,7 +12,7 @@ Template.listItem.helpers({
 		}
 	},
 	thumbnails: function() {
-		var n = 8; // number of photos
+		var n = 6; // number of photos
 		var photos = this.photos;
 
 		if (photos) {
