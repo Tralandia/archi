@@ -15,11 +15,11 @@
 					<i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
 					<p><a href="mailto:info@ppdeveloping.sk">info@ppdeveloping.sk</a></p>
 				</div>
-				{{#unless currentUser}}
-				<div class="col-lg-2 text-center">
-					<a href="#admin-login-modal" data-toggle="modal">Admin</a>
+				<div class="col-lg-12 text-center">
+					{{#unless currentUser}}
+						<a class="admin" href="#admin-login-modal" data-toggle="modal">Admin</a>
+					{{/unless}}
 				</div>
-				{{/unless}}
 			</div>
 		</div>
 	</section>

@@ -58,21 +58,7 @@ Template.editPlanModal.helpers({
 	},
 	isSelected: function(type) {
 		var plan = Template.parentData();
-		if (type == 'type') {
-			return plan.type == this._id ? "selected" : "";
-		}
-		if (type == 'garage') {
-			return plan.garage == this._id ? "selected" : "";
-		}
-		if (type == 'roof') {
-			return plan.roof == this._id ? "selected" : "";
-		}
-		if (type == 'doubleHouseOption') {
-			return this.doubleHouseOption == true ? "selected" : "";
-		}
-		if (type == 'suitableForHillside') {
-			return this.suitableForHillside == true ? "selected" : "";
-		}
+		return plan[type] == this._id ? "selected" : "";
 	},
 	getPhotos: function(type) {
 		if (this.photos && this.photos[type] && this.photos[type].length > 0) {
@@ -94,28 +80,28 @@ Template.editPlanModal.events({
 			name: $("#plan-name-edit").val(),
 			slug: $("#plan-slug-edit").val(),
 			description: $("#plan-description-edit").val(),
-			type: $("#plan-type").val(),
-			garage: $("#plan-garage").val(),
 			roof: $("#plan-roof").val(),
-			landWidth: $("#plan-landWidth").val(),
-			landLength: $("#plan-landLength").val(),
-			rooftopHeight: $("#plan-rooftopHeight").val(),
-			stories: $("#plan-stories").val(),
+			garage: $("#plan-garage").val(),
+			floor: $("#plan-floor").val(),
 			livingRoomCount: $("#plan-livingRoomCount").val(),
-			bathroomsCount: $("#plan-bathroomsCount").val(),
-			capacity: {
-				min: $("#plan-capacityMin").val(),
-				max: $("#plan-capacityMax").val()
-			},
-			entranceOrientation: $("#plan-entranceOrientation").val(),
-			livingArea: $("#plan-livingArea").val(),
 			usedArea: $("#plan-usedArea").val(),
 			usableArea: $("#plan-usableArea").val(),
+			usableAreaGround: $("#plan-usableAreaGround").val(),
+			usableAreaFloor: $("#plan-usableAreaFloor").val(),
+			livingArea: $("#plan-livingArea").val(),
 			planPrice: $("#plan-planPrice").val(),
-			studyPrice: $("#plan-studyPrice").val(),
 			housePrice: $("#plan-housePrice").val(),
-			doubleHouseOption: ($("#plan-doubleHouseOption").val() == "1" ? true : false),
+			rooftopHeight: $("#plan-rooftopHeight").val(),
+			rooftopAngle: $("#plan-rooftopAngle").val(),
+			buildingSpace: $("#plan-buildingSpace").val(),
+			bathroomsCount: $("#plan-bathroomsCount").val(),
+			entranceOrientation: $("#plan-entranceOrientation").val(),
+			photosInterior: $("#plan-photosInterior").val(),
+			photosExterior: $("#plan-photosExterior").val(),
+			photosViews: $("#plan-photosViews").val(),
+			photosBuilds: $("#plan-photosBuilds").val(),
 			suitableForHillside: ($("#plan-suitableForHillside").val() == "1" ? true : false),
+			energy: $("#plan-energy").val(),
 			built: builtDate.toDate()
 		}
 
@@ -128,21 +114,6 @@ Template.editPlanModal.events({
 			}
 		});
 	},
-	'change #plan-documentation': function(e, t) {
-		var files = e.target.files;
-		var planId = Session.get("editPlanId");
-
-		for (var i = 0, ln = files.length; i < ln; i++) {
-			Files.insert(files[i], function (err, fileObj) {
-				var update = {
-					$addToSet: {
-						documentation: fileObj._id
-					}
-				}
-				Plan.update(planId, update);
-			});
-		}
-	},
 	'change #plan-photosInterior, change #plan-photosExterior, change #plan-photosViews, change #plan-photosBuilds': function(e, t) {
 		var files = e.target.files;
 		var id = e.target.getAttribute('id')
@@ -150,6 +121,7 @@ Template.editPlanModal.events({
 
 		for (var i = 0, ln = files.length; i < ln; i++) {
 			Images.insert(files[i], function (err, fileObj) {
+				console.log(fileObj)
 				var type = "photos.interior";
 				if (id == "plan-photosExterior") {
 					type = "photos.exterior";

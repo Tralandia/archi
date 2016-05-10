@@ -8,11 +8,11 @@ Template.navbar.onRendered(function() {
         }
     });
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        var offset = $($anchor.attr('href')).offset();
+        var href = $(this).attr('href');
+        var offset = $(href).offset();
         if (!offset) return;
         $('html, body').stop().animate({
-            scrollTop: (offset.top - 50)
+            scrollTop: (offset.top - 68)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     });

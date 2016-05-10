@@ -64,35 +64,41 @@
 					</div>
 					<div class="modal-body">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-name-edit" placeholder="Názov" value="{{name}}">
+									<label>Názov:</label>
+									<input type="text" class="form-control" id="plan-name-edit" value="{{name}}">
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-8">
 								<div class="form-group">
-									<input type="text" class="form-control" id="plan-slug-edit" placeholder="Slug" value="{{slug}}">
+									<label>URL:</label>
+									<div class="input-group">
+										<span class="input-group-addon">http://www.ppdeveloping.sk/katalog/</span>
+										<input type="text" class="form-control" id="plan-slug-edit" value="{{slug}}">
+									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea class="form-control" id="plan-description-edit" placeholder="Popis">{{description}}</textarea>
+									<label>Popis:</label>
+									<textarea class="form-control" id="plan-description-edit" rows="8">{{description}}</textarea>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label>Typ domu</label>
-									<select class="form-control" id="plan-type">
+									<label>Strecha:</label>
+									<select class="form-control" id="plan-roof">
 										<option value="">- vyber -</option>
-										{{#each getParameters "project-type"}}
-										<option value="{{_id}}" {{isSelected 'type'}}>{{name}}</option>
+										{{#each getParameters "roof-type"}}
+										<option value="{{_id}}" {{isSelected 'roof'}}>{{name}}</option>
 										{{/each}}
 									</select>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label>Garáž</label>
+									<label>Garáž:</label>
 									<select class="form-control" id="plan-garage">
 										<option value="">- vyber -</option>
 										{{#each getParameters "garage-type"}}
@@ -103,102 +109,69 @@
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label>Strecha</label>
-									<select class="form-control" id="plan-roof">
+									<label>Počet poschodí:</label>
+									<select class="form-control" id="plan-floor">
 										<option value="">- vyber -</option>
-										{{#each getParameters "roof-type"}}
-										<option value="{{_id}}" {{isSelected 'roof'}}>{{name}}</option>
+										{{#each getParameters "floor-type"}}
+										<option value="{{_id}}" {{isSelected 'floor'}}>{{name}}</option>
 										{{/each}}
 									</select>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<label>Rozmery</label>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Obytné miestnosti:</label>
+									<input type="text" class="form-control" id="plan-livingRoomCount" value="{{livingRoomCount}}">
+								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
+									<label>Celková zastavaná plocha:</label>
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-landWidth" placeholder="Šírka pozemku" value="{{landWidth}}">
-										<div class="input-group-addon">m</div>
+										<input type="text" class="form-control" id="plan-usedArea" value="{{usedArea}}">
+										<div class="input-group-addon">m<sup>2</sup></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
+								<label>Celková úžitková plocha:</label>
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-landLength" placeholder="Dĺžka pozemku" value="{{landLength}}">
-										<div class="input-group-addon">m</div>
+										<input type="text" class="form-control" id="plan-usableArea" value="{{usableArea}}">
+										<div class="input-group-addon">m<sup>2</sup></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
+								<label>Úžitková plocha prízemia:</label>
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-rooftopHeight" placeholder="Max. výška strechy" value="{{rooftopHeight}}">
-										<div class="input-group-addon">m</div>
+										<input type="text" class="form-control" id="plan-usableAreaGround" value="{{usableAreaGround}}">
+										<div class="input-group-addon">m<sup>2</sup></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-stories" placeholder="Počet poschodí" value="{{stories}}">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-livingRoomCount" placeholder="Obytné miestnosti" value="{{livingRoomCount}}">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-bathroomsCount" placeholder="Kúpeľne" value="{{bathroomsCount}}">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-capacityMin" placeholder="Kapacita Osob Min" value="{{capacity.min}}">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-capacityMax" placeholder="Kapacita Osob Max" value="{{capacity.max}}">
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="plan-entranceOrientation" placeholder="Orientácia vstupu do domu" value="{{entranceOrientation}}">
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<label>Plocha</label>
-							</div>
-							<div class="col-md-4">
+								<label>Úžitková plocha poschodia:</label>
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-livingArea" placeholder="Obytná plocha" value="{{livingArea}}">
+										<input type="text" class="form-control" id="plan-usableAreaFloor" value="{{usableAreaFloor}}">
 										<div class="input-group-addon">m<sup>2</sup></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
+									<label>Obytná plocha:</label>
 									<div class="input-group">
-										<input type="text" class="form-control" id="plan-usedArea" placeholder="Zastavaná plocha" value="{{usedArea}}">
+										<input type="text" class="form-control" id="plan-livingArea" value="{{livingArea}}">
 										<div class="input-group-addon">m<sup>2</sup></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<div class="input-group">
-										<input type="text" class="form-control" id="plan-usableArea" placeholder="Úžitková plocha" value="{{usableArea}}">
-										<div class="input-group-addon">m<sup>2</sup></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>Cena projektu domu</label>
+									<label>Cena projektu domu:</label>
 									<div class="input-group">
 										<input type="text" class="form-control" id="plan-planPrice" placeholder="0" value="{{planPrice}}">
 										<div class="input-group-addon">&euro;</div>
@@ -207,26 +180,61 @@
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label>Cena štúdie domu</label>
-									<div class="input-group">
-										<input type="text" class="form-control" id="plan-studyPrice" placeholder="0" value="{{studyPrice}}">
-										<div class="input-group-addon">&euro;</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>Cena realizácie domu</label>
+									<label>Cena realizácie domu:</label>
 									<div class="input-group">
 										<input type="text" class="form-control" id="plan-housePrice" placeholder="0" value="{{housePrice}}">
 										<div class="input-group-addon">&euro;</div>
 									</div>
 								</div>
 							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Výška strechy:</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-rooftopHeight" value="{{rooftopHeight}}">
+										<div class="input-group-addon">m</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Sklon strechy:</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-rooftopAngle" value="{{rooftopAngle}}">
+										<div class="input-group-addon">&deg;</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Obostavaný priestor:</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-buildingSpace" value="{{buildingSpace}}">
+										<div class="input-group-addon">m<sup>2</sup></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Kúpeľne:</label>
+									<input type="text" class="form-control" id="plan-bathroomsCount" value="{{bathroomsCount}}">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Orientácia hlavného vstupu do domu:</label>
+									<select class="form-control" id="plan-garage">
+										<option value="">- vyber -</option>
+										{{#each getParameters "entranceOrientation-type"}}
+										<option value="{{_id}}" {{isSelected 'entranceOrientation'}}>{{name}}</option>
+										{{/each}}
+									</select>
+								</div>
+							</div>
 
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Fotografie interiér</label>
+									<label>Fotografie interiér:</label>
 									<a href="#" class="btn btn-upload">
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosInterior">
@@ -245,7 +253,7 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Fotografie exteriér</label>
+									<label>Fotografie exteriér:</label>
 									<a href="#" class="btn btn-upload">
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosExterior">
@@ -264,7 +272,7 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Pohľady</label>
+									<label>Fotografie podorys:</label>
 									<a href="#" class="btn btn-upload">
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosViews">
@@ -283,7 +291,7 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<label>Realizácie</label>
+									<label>Fotografie realizácií:</label>
 									<a href="#" class="btn btn-upload">
 										<i class="glyphicon glyphicon-upload"></i> Nahrať obrázok
 										<input type="file" multiple="true" id="plan-photosBuilds">
@@ -303,16 +311,7 @@
 
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label>Možný na dvojdom</label>
-									<select class="form-control" id="plan-doubleHouseOption">
-										<option value="0">Nie</option>
-										<option value="1" {{isSelected 'doubleHouseOption'}}>Áno</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label>Vhodný na svahovitý pozemok</label>
+									<label>Vhodný na svahovitý pozemok:</label>
 									<select class="form-control" id="plan-suitableForHillside">
 										<option value="0">Nie</option>
 										<option value="1" {{isSelected 'suitableForHillside'}}>Áno</option>
@@ -321,20 +320,20 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label>Realizované</label>
+									<label>Realizované:</label>
 									<div class="input-group">
 										<input type="text" class="form-control" id="plan-built" value="{{dateFormat built}}">
 										<div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
+							<div class="col-sm-4">
 								<div class="form-group">
-									<label>Dokumentacia (vsetky suvisiace subory, aj cele zip)</label>
-									<a href="#" class="btn btn-upload">
-										<i class="glyphicon glyphicon-upload"></i> Nahrať súbor
-										<input type="file" multiple="true" id="plan-documentation">
-									</a>
+									<label>Energetická náročnosť:</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="plan-energy" value="{{energy}}">
+										<div class="input-group-addon">kWh/m2/rok</div>
+									</div>
 								</div>
 							</div>
 						</div>

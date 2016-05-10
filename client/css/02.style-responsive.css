@@ -1,6 +1,7 @@
 @media(min-width:768px) {
     header {
-        min-height: 100%;
+        min-height: 500px;
+        margin-top: 84px;
     }
 
     header .header-content {
@@ -39,7 +40,7 @@
     .navbar-default {
         border: none;
         background-color: #fff;
-        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -72,9 +73,9 @@
     }
 
     .navbar-default.affix .nav > li.special > a,
-    .navbar-default.affix .nav > li.special > a:focus {
+    .navbar-default.affix .nav > li.special > a:focus { 
         padding: 7px 20px;
-        margin: 12px 0 0;
+        margin: 18px 0 0;
     }
 
     .navbar-default.affix .nav.admin-nav > li > a,
@@ -101,7 +102,25 @@
     }
 }
 
+@media(max-width:1024px) {
+    #catalog .catalog-row .list-thumbnails {
+        display: none;
+    }
+}
+
 @media(max-width:768px) {
+    section {
+        padding: 30px 0;
+    }
+    .home-carousel {
+        margin-top: 68px;
+    }
+    .home-carousel .item h2 {
+        top: 60px;
+    }
+    .home-carousel .item h2 a {
+        font-size: 18px;
+    }
     .navbar-fixed-top .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
         max-height: 300px;
@@ -115,10 +134,6 @@
     #catalog .catalog-row {
         margin: 0;
         padding: 15px 15px 10px 15px;
-    }
-    #catalog .catalog-row .list-thumbnails {
-        display: none;
-        position: relative;
     }
     #catalog .catalog-row h2 {
         position: absolute;

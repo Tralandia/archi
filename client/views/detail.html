@@ -1,23 +1,124 @@
 <template name="detail">
 	{{#with plan}}
-    <section id="catalog-detail">
-        <div class="container">
-            <p>{{description}}</p>
-            <h2>Video</h2>
-            <div class="detail-video">
-                <iframe src="https://player.vimeo.com/video/125555548" width="1140" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-            <h2>Gléria</h2>
-            <div class="detail-gallery">
-            	{{#each galleryImages}}
-                <div class="row">
-                    <div class="col-md-12">
-                        <img src="{{url}}" class="img-responsive">
-                    </div>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-    </section>
+	<header style="background-image: url({{coverImage}})">
+		{{#if currentUser}}
+			<a href="#" class="btn btn-primary edit"><i class="glyphicon glyphicon-pencil"></i> Upraviť projekt</a>
+		{{/if}}
+		<div class="header-content">
+			<div class="header-content-inner">
+				<h1>{{name}}</h1>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="plan-attributes">
+							<div class="attribute"><span>Strecha:</span>  {{getParameter 'roof'}} </div>
+							<div class="attribute"><span>Garáž:</span>  {{getParameter 'garage'}} </div>
+							<div class="attribute"><span>Počet poschodí:</span>  {{getParameter 'floor'}} </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="catalog-detail">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>{{description}}</p>
+				</div>
+				<div class="col-md-4">
+					<div class="plan-attributes">
+						{{#if livingRoomCount}}
+							<div class="attribute"><span>Obytné miestnosti</span> {{livingRoomCount}}</div>
+						{{/if}}
+						{{#if usedArea}}
+							<div class="attribute"><span>Celková zastavaná plocha</span> {{usedArea}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if usableArea}}
+							<div class="attribute"><span>Celková úžitková plocha</span> {{usableArea}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if usableAreaGround}}
+							<div class="attribute"><span>Úžitková plocha prízemia</span> {{usableAreaGround}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if usableAreaFloor}}
+							<div class="attribute"><span>Úžitková plocha poschodia</span> {{usableAreaFloor}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if livingArea}}
+							<div class="attribute"><span>Obytná plocha</span> {{livingArea}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if planPrice}}
+							<div class="attribute"><span>Cena projektu domu</span> {{planPrice}} EUR</div>
+						{{/if}}
+						{{#if housePrice}}
+							<div class="attribute"><span>Cena realizácie domu</span> {{housePrice}} EUR</div>
+						{{/if}}
+						{{#if rooftopHeight}}
+							<div class="attribute"><span>Výška strechy</span> {{rooftopHeight}} m</div>
+						{{/if}}
+						{{#if rooftopAngle}}
+							<div class="attribute"><span>Sklon strechy</span> {{rooftopAngle}} &deg;</div>
+						{{/if}}
+						{{#if buildingSpace}}
+							<div class="attribute"><span>Obostavaný priestor</span> {{buildingSpace}} m<sup>2</sup></div>
+						{{/if}}
+						{{#if energy}}
+							<div class="attribute"><span>Energetická náročnosť</span> {{energy}} kWh/m2/rok</div>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+			<h2>Video</h2>
+			<div class="detail-video">
+				<iframe src="https://player.vimeo.com/video/125555548" width="1140" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			{{#if hasGalleryImages 'interior'}}
+			<h2>Fotografie interiér</h2>
+			<div class="detail-gallery">
+				{{#each galleryImages 'interior'}}
+				<div class="row">
+					<div class="col-md-12">
+						<img src="{{url}}" class="img-responsive">
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			{{/if}}
+			{{#if hasGalleryImages 'exterior'}}
+			<h2>Fotografie exteriér</h2>
+			<div class="detail-gallery">
+				{{#each galleryImages 'exterior'}}
+				<div class="row">
+					<div class="col-md-12">
+						<img src="{{url}}" class="img-responsive">
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			{{/if}}
+			{{#if hasGalleryImages 'views'}}
+			<h2>Fotografie pôdorys</h2>
+			<div class="detail-gallery">
+				{{#each galleryImages 'views'}}
+				<div class="row">
+					<div class="col-md-12">
+						<img src="{{url}}" class="img-responsive">
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			{{/if}}
+			{{#if hasGalleryImages 'builds'}}
+			<h2>Fotografie realizácií</h2>
+			<div class="detail-gallery">
+				{{#each galleryImages 'builds'}}
+				<div class="row">
+					<div class="col-md-12">
+						<img src="{{url}}" class="img-responsive">
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			{{/if}}
+		</div>
+	</section>
 	{{/with}}
 </template>
