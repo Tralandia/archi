@@ -1,4 +1,15 @@
 <template name="home">
+	<div class="home-carousel">
+		<div class="owl-carousel">
+			{{#each plan}}
+			<div class="item animated">
+				<h2><a href="/katalog/{{slug}}">{{name}}</a></h2>
+				<div class="bg" style="background-image: url({{coverImage}});"></div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	
 	<section id="about">
 		<div class="container">
 			<div class="row">

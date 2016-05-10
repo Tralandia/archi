@@ -1,6 +1,6 @@
 <template name="list">
 	<section id="catalog-header" class="bg-dark">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
 					<h1>Katalóg</h1>
@@ -44,9 +44,64 @@
 				<h2><a href="{{detailUrl}}">{{name}}</a></h2>
 				<p>{{short description 200}}</p>
 				<div class="project-attributes">
-					<div class="attribute"><span>Typ domu</span> {{getParameter type}}</div>
-					<div class="attribute"><span>Garáž</span> {{getParameter garage}}</div>
-					<div class="attribute"><span>Strecha</span> {{getParameter roof}}</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="attribute"><span>Strecha:</span> {{getParameter roof}}</div>
+						</div>
+						<div class="col-md-4">
+							<div class="attribute"><span>Garáž:</span> {{getParameter garage}}</div>
+						</div>
+						{{#if livingRoomCount}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Obytné miestnosti:</span> {{livingRoomCount}}</div>
+						</div>
+						{{/if}}
+						{{#if usedArea}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Celková zastavaná plocha:</span> {{usedArea}} m<sup>2</sup></div>
+						</div>
+						{{/if}}
+						{{#if usableArea}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Celková úžitková plocha:</span> {{usableArea}} m<sup>2</sup></div>
+						</div>
+						{{/if}}
+						{{#if usableAreaGround}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Úžitková plocha prízemia:</span> {{usableAreaGround}} m<sup>2</sup></div>
+						</div>
+						{{/if}}
+						{{#if usableAreaFloor}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Úžitková plocha poschodia:</span> {{usableAreaFloor}} m<sup>2</sup></div>
+						</div>
+						{{/if}}
+						{{#if livingArea}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Obytná plocha:</span> {{livingArea}} m<sup>2</sup></div>
+						</div>
+						{{/if}}
+						{{#if planPrice}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Cena projektu domu:</span> {{planPrice}} EUR</div>
+						</div>
+						{{/if}}
+						{{#if housePrice}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Cena realizácie domu:</span> {{housePrice}} EUR</div>
+						</div>
+						{{/if}}
+						{{#if rooftopHeight}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Výška strechy:</span> {{rooftopHeight}} m</div>
+						</div>
+						{{/if}}
+						{{#if energy}}
+						<div class="col-md-4">
+							<div class="attribute"><span>Energetická náročnosť:</span> {{energy}} kWh/m2/rok</div>
+						</div>
+						{{/if}}
+					</div>
 				</div>
 				{{#if currentUser}}
 					<a href="#" class="btn btn-primary edit"><i class="glyphicon glyphicon-pencil"></i> Upraviť projekt</a>

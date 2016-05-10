@@ -25,9 +25,6 @@ Template.detail.helpers({
 			}
 		});
 	},
-	getParameter: function(type) {
-		return getParameter(this[type]);
-	},
 	imageUrl: function() {
 		return this.url();
 	}
